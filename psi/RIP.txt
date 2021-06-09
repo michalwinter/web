@@ -1,0 +1,5 @@
+Nastavení RIPu:
+	router rip
+	version 2
+Nastavení sítí do kterých se budou posílat RIP pakety
+	network 192.168.0.0

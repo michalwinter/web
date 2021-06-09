@@ -1,0 +1,44 @@
+Pozastavení hledání neznámeho příkazu
+	CTRL SHIFT 6 ( Pouze anglický layout )
+Privilegovaný mód
+	enable
+Konfigurace zařízení
+	conf t
+Reboot
+	reload
+Banner
+	banner motd "Banner"
+Hostname
+	hostname sw_konarik
+IP adresa
+	interface g0/1
+	ip address 10.0.1.1 255.255.255.0
+	no shutdown
+Zobrazení konfigurace v RAM
+	show run
+Zobrazení konfigurace v NVRAM
+	show start
+Zapsání aktuální konfigurace
+	write
+	( Nebo také )
+	copy run start
+
+ZABEZPEČENÍ
+
+Heslo pro privilegovaný mód
+	enable secret heslo
+Povolení hashování hesel
+	service password-encryption
+Heslo pro konzolovou linku
+	line cons 0
+	pass heslo
+	login
+Heslo pro telnet/ssh
+	line vty 0 15
+	pass heslo
+	login
+Heslo pro auxiliary port
+	line aux 0
+	pass heslo
+	login
+

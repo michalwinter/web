@@ -1,0 +1,18 @@
+Definování adres, kreré se nemají přidělovat v rámci DHCP
+	ip dhcp excluded-address 192.168.1.1 192.168.1.10 
+	ip dhcp ex 192.168.1.100
+	atd.
+Vytvoření DHCP poolu
+	ip dhcp pool BAZEN
+Definování sítě DHCP poolu
+	ip dhcp pool BAZEN
+	net 192.168.1.0 255.255.255.0
+Definování defaultní gateway DHCP poolu
+	ip dhcp pool BAZEN
+	default-router 192.168.1.254
+Definování DNS serveru DHCP poolu
+	ip dhcp pool BAZEN
+	dns-server 8.8.8.8
+Využití DHCP z jiného serveru
+	int g0/0
+	ip helper-address 10.10.10.10

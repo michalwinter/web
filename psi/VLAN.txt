@@ -1,0 +1,46 @@
+Zobrazení VLAN
+	do show vlan brief
+Zobrazení IP konfigurace
+	do show ip interface brief
+Vytvoření VLAN
+	vlan 10
+	name Uctarna
+	exit
+Přidělení portu do VLAN
+	interface fa0/1
+	switchport mode access
+	switchport access vlan 10
+	exit
+Přidělení několika portů do VLAN
+	interface range fa0/2-12
+	swicthport mode access
+	switchport access vlan 10
+	exut
+Trunk - Protékání VLAN mezi několika switchy ( Nutno nastavit na každém sw)
+	interface g0/1
+	switchport mode trunk
+	exit
+Povolení VLAN na trunkovém portu ( Nutno nastavit na každém sw )
+	interface g0/1
+	swicthport trunk allowed vlan 10,20
+	exit
+Několik VLAN na jedné lince routeru ( Propojený port na switchy musí být trunk )
+	interface g0/0.10 ( Subinterface )
+	encapsulation dot1Q 10
+	ip add 192.168.10.254 255.255.255.0
+	interface g0/0.20 ( Subinterface )
+	encapsulation dot1Q 20
+	ip add 192.168.20.254 255.255.255.0
+	interface g0/0.30 ( Subinterface )
+	encapsulation dot1Q 30
+	ip add 192.168.30.254 255.255.255.0
+	
+	interface g0/0
+	no shutdown
+VLAN routování na multilayer switchy
+	( Povolení routingu )
+	ip routing
+	( Po konfiguraci VLAN viz. výše )
+	int vlan 10
+	ip add 192.168.10.254 255.255.255.0
+	
