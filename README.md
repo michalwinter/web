@@ -5,3 +5,4 @@
 ## Vue.js Projects
 
 • [Countdown](https://michalwinter.github.io/web/vue.js/countdown/)
+• [Todo App](https://michalwinter.github.io/web/vue.js/todo/)
