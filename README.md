@@ -6,4 +6,4 @@
 
 • [Countdown](https://michalwinter.github.io/web/vue.js/countdown/)
 
-• [Todo App](https://michalwinter.github.io/web/vue.js/todo/)
+• [Todo App](https://michalwinter.github.io/web/vue.js/todos/)
